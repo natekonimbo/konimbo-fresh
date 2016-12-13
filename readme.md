@@ -1,7 +1,7 @@
 ```
 var url = "https://konimbo.freshdesk.com/helpdesk/tickets/view/328121.json"
   , username = "support@konimbo.co.il"
-  , password = "mango7410";
+  , password = "";
 $.ajax({
     url: url,
     method: "GET",
