@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
+app.get('/tickets', (req, res) => {
+    res.render('tickets')
+})
+
 // Get tickets
 app.get('/t', (req, res) => {
     var getAccess = () => {
