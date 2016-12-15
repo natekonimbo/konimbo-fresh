@@ -1,7 +1,7 @@
 var express = require('express'),
     request = require('request'),
     btoa = require('btoa'),
-    dotenv = require('dotenv');
+    dotenv = require('dotenv')
 var app = express()
 
 app.set('port', (process.env.PORT || 5000))

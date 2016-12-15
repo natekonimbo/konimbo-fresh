@@ -1,0 +1,27 @@
+html
+    head
+    link(rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css")
+    link(rel="stylesheet" type="text/css" href="content/css/style.css")
+    script(src="jquery/dist/jquery.min.js")
+    script(src="semantic/dist/semantic.min.js")
+
+    body.login
+        .ui.middle.aligned.center.aligned.grid
+            .column
+                h2.ui.teal.header
+                    .content
+                        | Log-in
+                form.ui.large.form
+                    .ui.stacked.segment
+                        .field
+                            .ui.left.icon.input
+                                i.user.icon
+                                input(type='text', name='email', placeholder='E-mail address')
+                        .field
+                            .ui.left.icon.input
+                                i.lock.icon
+                                input(type='password', name='password', placeholder='Password')
+                        .ui.fluid.large.teal.submit.button Login
+                    .ui.error.message
+                .ui.message
+                    a(href="/tickets")="Tickets?"

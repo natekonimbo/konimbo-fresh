@@ -1,0 +1,11 @@
+body.login {
+    background-color: #DADADA;
+}
+
+body.login>.grid {
+    height: 100%;
+}
+
+.column {
+    max-width: 450px;
+}
