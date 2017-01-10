@@ -3,10 +3,18 @@ var express = require('express'),
     request = require('request'),
     btoa = require('btoa'),
     dotenv = require('dotenv'),
+    sassMiddleware = require('node-sass-middleware'),
     app = express();
 
+// Compile SCSS
+app.use(sassMiddleware({
+    src: __dirname + '/scss',
+    dest: __dirname + 'public/content/css',
+    debug: true
+}));
+
 app.set('port', (process.env.PORT || 5000));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Define template engine
 app.set('views', './views');

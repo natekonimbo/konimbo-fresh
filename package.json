@@ -4,13 +4,15 @@
   "description": "A Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "npm run build-css && node index.js",
+    "build-css": "node-sass --include-path scss ./public/content/scss/main.scss ./public/content/css/bundle.css"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
     "btoa": "^1.1.2",
     "dotenv": "^2.0.0",
     "express": "^4.13.3",
+    "node-sass-middleware": "^0.10.1",
     "pug": "^2.0.0-beta6",
     "request": "^2.79.0"
   },

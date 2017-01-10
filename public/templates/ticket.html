@@ -1,0 +1,16 @@
+<div class="lang-heb">
+    <div class="panel-heading">
+        <div class="title">
+            <a class="label label-warning" ng-href="https://konimbo.freshdesk.com/helpdesk/tickets/{{ ticket.display_id }}">{{ ticket.display_id }}</a>
+            <span class="panel-title">{{ ticket.subject | limitTo:titleLimit }}</span>
+        </div>
+        <div class="attributes">
+            <span class="label label-info">{{ ticket.status_name }}</span>
+            <span class="timestamp label label-info">{{ ticket.created_at | date: 'dd-MM-yyyy @ h:mma' }}</span>
+        </div>
+        <a href="javascript:;" class="btn btn-ticket--readmore" data-role="button" data-toggle="collapse" data-target="#t{{ ticket.display_id }}">קרא עוד ←</a>
+    </div>
+    <div id="t{{ ticket.display_id }}" class="description panel-body collapse">
+        <p>{{ ticket.description | limitTo:letterLimit }}</p>
+    </div>
+</div>

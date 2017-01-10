@@ -2,6 +2,7 @@
 <html ng-app="konimbo_freshdesk_app">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title">
         <link rel="stylesheet" href="content/css/style.css" media="screen" title="no title">
         <script src="jquery/dist/jquery.min.js"></script>
@@ -10,48 +11,39 @@
         <title>Konimbo | Support Dashboard</title>
     </head>
     <body>
-        <loading ng-show="loadingOverlay"></loading>
         <header class="header">
             <h4>Konimbo Support Tickets Dashboard</h4>
         </header>
-        <div class="container">
-            <div id="#tickets" class="row" ng-controller="TicketsController as tickets">
-                <upcoming class="col-xs-12 col-sm-6">
-                    <div class="well">
-                        <h3>Tickets</h3>
-                        <span>Upcoming Tickets:
-                            {{ ticketsList.length }}</span>
-                    </div>
-                    <div class="ticket--wrapper panel col-xs-12 col-sm-6" ng-repeat="ticket in ticketsList">
-                        <div class="card card-1">
-                            <div class="panel-heading">
-                                <span class="panel-title">{{ ticket.subject | limitTo:titleLimit }}</span>
-                                <span class="badge">{{ ticket.status_name }}</span>
-                            </div>
-                            <div class="panel-body">
-                                <span class="timestamp">{{ ticket.created_at }}</span>
-                                <p>{{ ticket.description | limitTo:letterLimit }}</p>
-                            </div>
+        <div class="container" ng-controller="TicketsController as tickets">
+            <div id="tickets" class="row">
+                <upcoming class="section col-xs-12 col-sm-6">
+                    <div class="well header">
+                        <div class="title">
+                            <h3>Tickets
+                                <span class="badge">{{ ticketsList.length }}</span>
+                            </h3>
+                            <span>Upcoming Tickets</span>
                         </div>
+                        <div class="toolbar">
+                            <button class="btn" type="button" name="button">
+                                <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <loading ng-show="loadingOverlay"></loading>
+                    <div class="ticket--wrapper panel card card-1 col-xs-12" ng-repeat="ticket in ticketsList">
+                        <ticket data-ticket="ticket"></ticket>
                     </div>
                 </upcoming>
-                <tasks class="col-xs-12 col-sm-6">
+                <tasks class="section col-xs-12 col-sm-6">
                     <div class="well">
                         <h3>Tasks</h3>
-                        <span>Tickets:
-                            {{ tasksList.length }}</span>
+                        <span>Tickets:</span>
+                        <span class="badge">{{ tasksList.length }}</span>
                     </div>
-                    <div class="ticket--wrapper panel card col-xs-12 col-sm-6" ng-repeat="ticket in tasksList">
-                        <div class="card card-1">
-                            <div class="panel-heading">
-                                <span class="panel-title">{{ ticket.subject }}</span>
-                                <span class="badge">{{ ticket.status_name }}</span>
-                            </div>
-                            <div class="panel-body">
-                                <span class="timestamp">{{ ticket.created_at }}</span>
-                                <p>{{ ticket.description | limitTo:letterLimit }}</p>
-                            </div>
-                        </div>
+                    <loading ng-show="loadingOverlay"></loading>
+                    <div class="ticket--wrapper panel col-xs-12" ng-repeat="ticket in taskList">
+                        <ticket data-ticket="ticket"></ticket>
                     </div>
                 </tasks>
             </div>
