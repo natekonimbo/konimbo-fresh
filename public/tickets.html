@@ -1,53 +1,30 @@
 <!DOCTYPE html>
-<html ng-app="konimbo_freshdesk_app">
+<html ng-app="konimbo_freshdesk_app" ng-cloak="true">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title">
-        <link rel="stylesheet" href="content/css/style.css" media="screen" title="no title">
-        <script src="jquery/dist/jquery.min.js"></script>
-        <script src="bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="content/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title">
+        <link rel="stylesheet" href="content/style/loader.scss" media="screen">
+        <link rel="stylesheet" href="content/style/ticket.scss" media="screen">
+        <link rel="stylesheet" href="content/style/tickets_wrapper.scss" media="screen">
+        <link rel="stylesheet" href="content/style/base.scss" media="screen">
+        <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
         <title>Konimbo | Support Dashboard</title>
     </head>
     <body>
-        <header class="header">
+        <header>
             <h4>Konimbo Support Tickets Dashboard</h4>
         </header>
         <div class="container" ng-controller="TicketsController as tickets">
             <div id="tickets" class="row">
-                <upcoming class="section col-xs-12 col-sm-6">
-                    <div class="well header">
-                        <div class="title">
-                            <h3>Tickets
-                                <span class="badge">{{ ticketsList.length }}</span>
-                            </h3>
-                            <span>Upcoming Tickets</span>
-                        </div>
-                        <div class="toolbar">
-                            <button class="btn" type="button" name="button">
-                                <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                    </div>
-                    <loading ng-show="loadingOverlay"></loading>
-                    <div class="ticket--wrapper panel card card-1 col-xs-12" ng-repeat="ticket in ticketsList">
-                        <ticket data-ticket="ticket"></ticket>
-                    </div>
-                </upcoming>
-                <tasks class="section col-xs-12 col-sm-6">
-                    <div class="well">
-                        <h3>Tasks</h3>
-                        <span>Tickets:</span>
-                        <span class="badge">{{ tasksList.length }}</span>
-                    </div>
-                    <loading ng-show="loadingOverlay"></loading>
-                    <div class="ticket--wrapper panel col-xs-12" ng-repeat="ticket in taskList">
-                        <ticket data-ticket="ticket"></ticket>
-                    </div>
-                </tasks>
+                <tickets-wrapper class="section col-xs-12 col-sm-6"></tickets-wrapper>
             </div>
         </div>
-        <script type="text/javascript" src="app.js"></script>
+        <footer></footer>
+        <script src="content/jquery/dist/jquery.min.js"></script>
+        <script src="content/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+        <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+        <script src="content/scripts/app.js" type="text/javascript"></script>
     </body>
 </html>

@@ -3,18 +3,25 @@ var express = require('express'),
     request = require('request'),
     btoa = require('btoa'),
     dotenv = require('dotenv'),
-    sassMiddleware = require('node-sass-middleware'),
+    compileSass = require('express-compile-sass'),
     app = express();
 
 // Compile SCSS
-app.use(sassMiddleware({
-    src: __dirname + '/scss',
-    dest: __dirname + 'public/content/css',
-    debug: true
+app.use(compileSass({
+    debug: true,
+    root: __dirname + '/public',
+    sourceMap: true, // Includes Base64 encoded source maps in output css
+    sourceComments: false, // Includes source comments in output css
+    watchFiles: true, // Watches sass files and updates mtime on main files for each change
+    logToConsole: true
 }));
 
-app.set('port', (process.env.PORT || 5000));
+// TODO: Bundle css,js files
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Port
+app.set('port', (process.env.PORT || 5000));
 
 // Define template engine
 app.set('views', './views');
@@ -70,4 +77,4 @@ app.get('/tasks', (req, res) => {
 
 app.listen(app.get('port'), () => {
     console.log("Node app is running; http://localhost:" + app.get('port'))
-})
+});

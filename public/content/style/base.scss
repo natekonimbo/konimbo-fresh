@@ -1,11 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu|Varela+Round');
+@import url( 'https://fonts.googleapis.com/css?family=Ubuntu|Varela+Round');
+
 body {
     font-family: 'Varela Round', sans-serif;
     font-family: 'Ubuntu', sans-serif;
+    min-height: 100vh;
 }
 
 header {
-    padding: 5px 10px;
+    padding: 1em 5em;
+    background: #aaa;
+    margin-bottom: 20px;
+}
+
+footer {
+    padding: 40px 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
 }
 
 .lang-heb {
@@ -20,12 +32,8 @@ header {
     padding: 0.2em 1.5em 1em 1em;
 }
 
-.description p {
-    border-right: 3px solid #a074a2;
-    padding: 0 10px;
-}
-
-.header .title, .header .toolbar {
+.header .title,
+.header .toolbar {
     display: inline-block;
 }
 
@@ -37,11 +45,6 @@ header {
     width: 35px;
     float: right;
     margin: 1em 0;
-}
-
-.panel-heading .attributes {
-    max-width: 380px;
-    float: right;
 }
 
 .btn {
@@ -61,17 +64,16 @@ header {
     color: #fff;
     text-decoration: none;
 }
-
-
 /* card style with box shadow */
-
 .card {
     background: #fff;
     min-height: 62px;
+    border-radius: 0;
     overflow: hidden;
 }
 
-.card .panel-heading, .card .panel-body {
+.card .panel-body,
+.card .panel-heading {
     overflow: hidden;
 }
 

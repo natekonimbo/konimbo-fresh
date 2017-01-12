@@ -7,6 +7,9 @@ div {
         }
 
         .attributes {
+          max-width: 380px;
+          margin-bottom: 10px;
+          float: right;
             .label {}
 
             .timestamp {}
@@ -16,6 +19,9 @@ div {
     }
 
     .description {
-        p {}
+        p {
+          border-right: 3px solid #a074a2;
+          padding: 0 10px;
+        }
     }
 }
