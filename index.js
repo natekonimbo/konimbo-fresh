@@ -58,19 +58,24 @@ app.get('/upcoming', (req, res) => {
     request(options, (error, response, body) => {
         if (!error && response.statusCode == 200) {
             data = JSON.parse(body);
-            res.json({data}).end();
+            res.json({
+                data
+            }).end();
         }
     });
 });
 
 // get tasks
-app.get('/tasks', (req, res) => {
-    var options = getFetchOptions();
-    options.url = "https://konimbo.freshdesk.com/helpdesk/tickets/view/328122.json";
+app.get('/tickets/:id', (req, res) => {
+    var options = getFetchOptions(),
+        id = req.params.id;
+    options.url = "https://konimbo.freshdesk.com/helpdesk/tickets/view/" + id + ".json";
     request(options, (error, response, body) => {
         if (!error && response.statusCode == 200) {
             data = JSON.parse(body);
-            res.json({data}).end();
+            res.json({
+                data
+            }).end();
         }
     });
 });

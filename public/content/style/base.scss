@@ -20,6 +20,10 @@ footer {
     border-top: 1px solid #e5e5e5;
 }
 
+.container-fluid {
+  min-height: 77vh;
+}
+
 .lang-heb {
     direction: rtl;
 }
