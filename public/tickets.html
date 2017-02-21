@@ -2,6 +2,7 @@
 <html ng-app="konimbo_freshdesk_app" ng-cloak="true">
 
 <head>
+    <meta name="robots" content="noindex, nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Stylesheets -->
@@ -28,11 +29,16 @@
     </header>
     <div class="container-fluid" ng-controller="TicketsController">
         <div class="row">
-            <div id="tickets" class="tickets__untracked">
-                <tickets-wrapper class="section col-xs-12 col-sm-6" data-ticketstitle="Untracked-Tickets"></tickets-wrapper>
+            <div class="side__nav col-xs-1">
+                
             </div>
-            <div id="tracked" class="tickets__tracked">
-                <tickets-wrapper class="section col-xs-12 col-sm-6" data-ticketstitle="Tracked-Tickets"></tickets-wrapper>
+            <div class="panel col-xs-11">
+                <div id="tickets" class="tickets__untracked">
+                    <tickets-wrapper class="section col-xs-12 col-sm-6" data-ticketstitle="Untracked-Tickets"></tickets-wrapper>
+                </div>
+                <div id="tracked" class="tickets__tracked">
+                    <tickets-wrapper class="section col-xs-12 col-sm-6" data-ticketstitle="Tracked-Tickets"></tickets-wrapper>
+                </div>
             </div>
         </div>
     </div>

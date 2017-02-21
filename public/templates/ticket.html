@@ -1,8 +1,10 @@
 <div class="lang-heb">
     <div class="panel-heading">
         <div class="title">
-            <a class="label label-warning" ng-href="https://konimbo.freshdesk.com/helpdesk/tickets/{{ ticket.display_id }}">{{ ticket.display_id }}</a>
+            <a ng-href="https://konimbo.freshdesk.com/helpdesk/tickets/{{ ticket.display_id }}" target="_blank">
+            <span class="label label-warning">{{ ticket.display_id }}</span>
             <span class="panel-title">{{ ticket.subject | limitTo:titleLimit }}</span>
+            </a>
         </div>
         <div class="attributes">
             <span class="label label-info">{{ ticket.status_name }}</span>

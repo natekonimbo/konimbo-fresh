@@ -8,17 +8,17 @@ var express = require('express'),
     Raven = require('raven');
     
 // Raven
-Raven.config('https://29388f5c2ca84fe49b8f39995151cdb4:7f7af5e793ce4498a45cfe1eb937826c@sentry.io/141123').install()
-app.use(Raven.requestHandler());
-app.get('/', function mainHandler(req, res) {
-    // example for throwing error which indicates in sentry.io
-    // throw new Error('Broke!');
-});
-app.use(Raven.errorHandler());
-app.use(function onError(err, req, res, next) {
-    res.statusCode = 500;
-    res.end(res.sentry + '\n');
-});
+// Raven.config('__DSN__').install()
+// app.use(Raven.requestHandler());
+// app.get('/', function mainHandler(req, res) {
+//     // example for throwing error which indicates in sentry.io
+//     // throw new Error('Broke!');
+// });
+// app.use(Raven.errorHandler());
+// app.use(function onError(err, req, res, next) {
+//     res.statusCode = 500;
+//     res.end(res.sentry + '\n');
+// });
 // END Raven
 
 // Compile SCSS

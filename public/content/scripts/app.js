@@ -97,7 +97,7 @@ app.directive('ticketsWrapper', function() {
         restrict: 'E',
         controller: 'TicketsController',
         scope: {
-            ticketstitle: '=ticketstitle',
+            ticketstitle: '@',
             ticketsList: '@'
         },
         templateUrl: 'templates/tickets_wrapper.html',
