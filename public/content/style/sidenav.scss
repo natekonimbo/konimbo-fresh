@@ -1,0 +1,1174 @@
+//colors
+$color_bright_gray_approx: #3e454c;
+$color_scarpa_flow_approx: #51585e;
+$white: #ffffff;
+$color_rolling_stone_approx: #787d82;
+$color_lochmara_approx: #1784c7;
+$color_tuna_approx: #33383e;
+$black_20: rgba(0, 0, 0, 0.2);
+$color_curious_blue_approx: #1a93de;
+$black_30: rgba(0, 0, 0, 0.3);
+$color_mine_shaft_approx: #2c3136;
+$color_mirage_approx: #1c1f22;
+$color_bright_gray_80_approx: rgba(62, 69, 76, 0.8);
+$white_90: rgba(255, 255, 255, 0.9);
+$black_10: rgba(0, 0, 0, 0.1);
+$color_nevada_approx: #656a70;
+$color_ship_gray_approx: #373d44;
+$color_salmon_approx: #ff7e66;
+$white_20: rgba(255, 255, 255, 0.2);
+//fonts
+$font_0: Helvetica Neue;
+$font_1: Arial;
+$font_2: sans-serif;
+//urls
+$url_0: url("https://codyhouse.co/demo/responsive-sidebar-navigation/img/cd-search.svg");
+$url_1: url("https://codyhouse.co/demo/responsive-sidebar-navigation/img/cd-nav-icons.svg");
+$url_2: url("https://codyhouse.co/demo/responsive-sidebar-navigation/img/cd-arrow.svg");
+//@extend-elements
+//original selectors
+//#carbonads-container, #ui8ads-container
+
+%extend_1 {
+    position: fixed;
+    top: 80px;
+    right: 5%;
+    width: 180px;
+    display: none;
+    z-index: 1;
+}
+//original selectors
+//#carbonads-container .close-carbon-adv, #carbonads-container .close-ui8-adv, #ui8ads-container .close-carbon-adv, #ui8ads-container .close-ui8-adv
+
+%extend_2 {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    background: $color_bright_gray_80_approx;
+    text-indent: 100%;
+    overflow: hidden;
+    width: 32px;
+    height: 32px;
+}
+//original selectors
+//#carbonads-container .close-carbon-adv::after, #carbonads-container .close-carbon-adv::before, #carbonads-container .close-ui8-adv::after, #carbonads-container .close-ui8-adv::before, #ui8ads-container .close-carbon-adv::after, #ui8ads-container .close-carbon-adv::before, #ui8ads-container .close-ui8-adv::after, #ui8ads-container .close-ui8-adv::before
+
+%extend_3 {
+    content: '';
+    background-color: $white;
+    height: 2px;
+    width: 14px;
+    position: absolute;
+    top: 14px;
+    left: 9px;
+}
+//original selectors
+//#carbonads-container .carbonad, #carbonads-container .ui8ad, #ui8ads-container .carbonad, #ui8ads-container .ui8ad
+
+%extend_4 {
+    background: $white_90;
+    border: none;
+    width: 100%;
+    height: auto;
+    padding: 14px;
+    text-align: center;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 0 3px 3px 3px;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 20px $black_10;
+}
+//original selectors
+//#carbonads-container .carbonad .carbon-wrap, #carbonads-container .ui8ad .carbon-wrap, #ui8ads-container .carbonad .carbon-wrap, #ui8ads-container .ui8ad .carbon-wrap
+
+%extend_5 {
+    display: block;
+    width: 100%;
+    padding: 0;
+}
+//original selectors
+//#carbonads-container .carbonad .carbon-wrap a, #carbonads-container .ui8ad .carbon-wrap a, #ui8ads-container .carbonad .carbon-wrap a, #ui8ads-container .ui8ad .carbon-wrap a
+
+%extend_6 {
+    color: $color_lochmara_approx;
+    font-size: 13px;
+    font-weight: bold;
+}
+//original selectors
+//#carbonads-container .carbonad .carbon-poweredby, #carbonads-container .ui8ad .carbon-poweredby, #ui8ads-container .carbonad .carbon-poweredby, #ui8ads-container .ui8ad .carbon-poweredby
+
+%extend_7 {
+    display: inline-block;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+.cd-nugget-info {
+    text-align: center;
+    margin: 2em 0;
+
+    a {
+        display: inline-block;
+        padding: 1.4em 1.6em;
+        background-color: $color_lochmara_approx;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 0.25em;
+        position: relative;
+        font-size: 14px;
+        color: $white;
+        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: all 0.2s;
+    }
+
+    span {
+        vertical-align: middle;
+        display: inline-block;
+
+        svg {
+            display: block;
+        }
+    }
+
+    .cd-nugget-info-arrow {
+        fill: $white;
+    }
+}
+
+.no-touch {
+    &#ui8ads-container {
+        .carbonad .carbon-wrap a:hover {
+            text-decoration: underline;
+        }
+
+        .ui8ad .carbon-wrap a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .cd-nugget-info a:hover {
+        opacity: 0.8;
+    }
+
+    #carbonads-container .carbonad .carbon-wrap a:hover {
+        text-decoration: underline;
+    }
+
+    &#carbonads-container .ui8ad .carbon-wrap a:hover {
+        text-decoration: underline;
+    }
+}
+
+#carbonads-container {
+    @extend %extend_1;
+
+    .close-carbon-adv {
+        @extend %extend_2;
+
+        &:hover {
+            background: $color_bright_gray_approx;
+        }
+    }
+
+    .close-ui8-adv {
+        @extend %extend_2;
+
+        &:hover {
+            background: $color_bright_gray_approx;
+        }
+    }
+
+    .close-carbon-adv::after {
+        @extend %extend_3;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(45deg);
+    }
+
+    .close-carbon-adv::before {
+        @extend %extend_3;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(-45deg);
+    }
+
+    .close-ui8-adv::after {
+        @extend %extend_3;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(45deg);
+    }
+
+    .close-ui8-adv::before {
+        @extend %extend_3;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(-45deg);
+    }
+
+    .carbonad {
+        @extend %extend_4;
+
+        .carbon-text {
+            font-family: $font_0, $font_1, $font_2;
+        }
+
+        .carbonad-tag {
+            font-family: $font_0, $font_1, $font_2;
+            margin-top: 5px;
+            color: $color_bright_gray_approx;
+
+            a {
+                color: $color_bright_gray_approx;
+
+                &:hover {
+                    color: $color_lochmara_approx;
+                }
+            }
+        }
+
+        .carbon-poweredby {
+            font-family: $font_0, $font_1, $font_2;
+            margin-top: 5px;
+            color: $color_bright_gray_approx;
+            @extend %extend_7;
+
+            a {
+                color: $color_bright_gray_approx;
+
+                &:hover {
+                    color: $color_lochmara_approx;
+                }
+            }
+        }
+
+        .carbon-wrap {
+            @extend %extend_5;
+
+            a {
+                @extend %extend_6;
+            }
+        }
+
+        .carbon-img img {
+            margin: 0 10px 10px;
+            width: 130px;
+        }
+    }
+
+    .ui8ad {
+        @extend %extend_4;
+
+        .carbon-text {
+            font-family: $font_0, $font_1, $font_2;
+        }
+
+        .carbonad-tag {
+            font-family: $font_0, $font_1, $font_2;
+            margin-top: 5px;
+            color: $color_bright_gray_approx;
+
+            a {
+                color: $color_bright_gray_approx;
+
+                &:hover {
+                    color: $color_lochmara_approx;
+                }
+            }
+        }
+
+        .carbon-poweredby {
+            font-family: $font_0, $font_1, $font_2;
+            margin-top: 5px;
+            color: $color_bright_gray_approx;
+            @extend %extend_7;
+
+            a {
+                color: $color_bright_gray_approx;
+
+                &:hover {
+                    color: $color_lochmara_approx;
+                }
+            }
+        }
+
+        .carbon-wrap {
+            @extend %extend_5;
+
+            a {
+                @extend %extend_6;
+            }
+        }
+
+        .carbon-img img {
+            margin: 0 10px 10px;
+            width: 130px;
+        }
+    }
+}
+
+#ui8ads-container {
+    @extend %extend_1;
+
+    .close-carbon-adv {
+        @extend %extend_2;
+
+        &:hover {
+            background: $color_bright_gray_approx;
+        }
+    }
+
+    .close-ui8-adv {
+        @extend %extend_2;
+
+        &:hover {
+            background: $color_bright_gray_approx;
+        }
+    }
+
+    .close-carbon-adv::after {
+        @extend %extend_3;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(45deg);
+    }
+
+    .close-carbon-adv::before {
+        @extend %extend_3;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(-45deg);
+    }
+
+    .close-ui8-adv::after {
+        @extend %extend_3;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(45deg);
+    }
+
+    .close-ui8-adv::before {
+        @extend %extend_3;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(-45deg);
+    }
+
+    .carbonad {
+        @extend %extend_4;
+
+        .carbon-text {
+            font-family: $font_0, $font_1, $font_2;
+        }
+
+        .carbonad-tag {
+            font-family: $font_0, $font_1, $font_2;
+            margin-top: 5px;
+            color: $color_bright_gray_approx;
+
+            a {
+                color: $color_bright_gray_approx;
+
+                &:hover {
+                    color: $color_lochmara_approx;
+                }
+            }
+        }
+
+        .carbon-poweredby {
+            font-family: $font_0, $font_1, $font_2;
+            margin-top: 5px;
+            color: $color_bright_gray_approx;
+            @extend %extend_7;
+
+            a {
+                color: $color_bright_gray_approx;
+
+                &:hover {
+                    color: $color_lochmara_approx;
+                }
+            }
+        }
+
+        .carbon-wrap {
+            @extend %extend_5;
+
+            a {
+                @extend %extend_6;
+            }
+        }
+
+        .carbon-img img {
+            margin: 0 10px 10px;
+            width: 130px;
+        }
+    }
+
+    .ui8ad {
+        @extend %extend_4;
+
+        .carbon-text {
+            font-family: $font_0, $font_1, $font_2;
+        }
+
+        .carbonad-tag {
+            font-family: $font_0, $font_1, $font_2;
+            margin-top: 5px;
+            color: $color_bright_gray_approx;
+
+            a {
+                color: $color_bright_gray_approx;
+
+                &:hover {
+                    color: $color_lochmara_approx;
+                }
+            }
+        }
+
+        .carbon-poweredby {
+            font-family: $font_0, $font_1, $font_2;
+            margin-top: 5px;
+            color: $color_bright_gray_approx;
+            @extend %extend_7;
+
+            a {
+                color: $color_bright_gray_approx;
+
+                &:hover {
+                    color: $color_lochmara_approx;
+                }
+            }
+        }
+
+        .carbon-wrap {
+            @extend %extend_5;
+
+            a {
+                @extend %extend_6;
+            }
+        }
+
+        .carbon-img img {
+            margin: 0 10px 10px;
+            width: 130px;
+        }
+    }
+}
+@media only screen and(min-width: 1170px) {
+    #carbonads-container {
+        display: block;
+    }
+
+    #ui8ads-container {
+        display: block;
+    }
+
+    .cd-main-content::before {
+        content: 'desktop';
+    }
+
+    .cd-side-nav {
+        width: 200px;
+
+        > ul {
+            padding: 0.6em 0;
+
+            > li {
+                > a {
+                    padding: 1em 1em 1em 42px;
+                    text-align: left;
+                    border-bottom: none;
+                }
+
+                > a::before {
+                    top: 50%;
+                    bottom: auto;
+                    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+                    transform: translateY(-50%);
+                    left: 18px;
+                }
+
+                &:not(.action-btn):hover > a {
+                    background-color: $color_tuna_approx;
+                }
+            }
+        }
+
+        .cd-label {
+            display: block;
+            padding: 1em 18px;
+        }
+
+        .action-btn {
+            text-align: left;
+
+            a {
+                margin: 0 18px;
+            }
+        }
+
+        .count {
+            color: $white;
+            height: auto;
+            width: auto;
+            //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+            border-radius: 0.25em;
+            padding: 0.2em 0.4em;
+            top: 50%;
+            bottom: auto;
+            //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: translateY(-50%);
+            right: 18px;
+            left: auto;
+            //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+            box-shadow: none;
+        }
+
+        .has-children.hover > ul {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .has-children {
+        > ul {
+            width: 100%;
+            z-index: 1;
+        }
+
+        ul a {
+            padding-left: 18px;
+        }
+
+        &.active > ul {
+            position: relative;
+            display: block;
+            left: 0;
+            //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+            box-shadow: none;
+        }
+    }
+
+    .cd-main-content .content-wrapper {
+        margin-left: 200px;
+    }
+
+    .cd-top-nav li:not(.has-children) a:hover {
+        color: $color_lochmara_approx;
+    }
+
+    .no-touch .cd-side-nav {
+        .action-btn a:hover {
+            background-color: $color_curious_blue_approx;
+        }
+
+        .has-children:hover > ul {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.cd-main-content::before {
+    display: none;
+    content: 'mobile';
+}
+@media only screen and(min-width: 768px) {
+    .cd-main-content::before {
+        content: 'tablet';
+    }
+
+    .cd-main-header {
+        position: fixed;
+        height: 55px;
+    }
+
+    .cd-logo {
+        margin: 16px 0 0 36px;
+    }
+
+    .cd-nav-trigger {
+        display: none;
+    }
+
+    .cd-search {
+        float: left;
+        display: inline-block;
+        width: 250px;
+        height: 100%;
+        margin: 0 0 0 2.5em;
+
+        &.is-hidden {
+            opacity: 1;
+        }
+
+        form {
+            height: 100%;
+            width: 100%;
+        }
+
+        input {
+            height: 100%;
+            width: 100%;
+            border: none;
+            padding-left: 2.6em;
+            //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+            border-radius: 0;
+            background-color: $color_bright_gray_approx;
+            border-left: 1px solid $color_scarpa_flow_approx;
+            color: $white;
+
+            &:-moz-placeholder {
+                color: $color_rolling_stone_approx;
+            }
+
+            &:-ms-input-placeholder {
+                color: $color_rolling_stone_approx;
+            }
+        }
+
+        input::-webkit-input-placeholder {
+            color: $color_rolling_stone_approx;
+        }
+
+        input::-moz-placeholder {
+            color: $color_rolling_stone_approx;
+        }
+    }
+
+    .cd-search::before {
+        background-position: 0 -16px;
+        left: 1em;
+    }
+
+    .cd-nav {
+        display: block;
+        float: right;
+        height: 100%;
+    }
+
+    .cd-top-nav {
+        height: 100%;
+
+        a {
+            display: block;
+            font-size: 1.4rem;
+            color: $white;
+        }
+
+        > li {
+            display: inline-block;
+            margin-right: 1em;
+            height: 100%;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            a {
+                padding: 1em 0.6em !important;
+            }
+        }
+
+        img {
+            display: block;
+        }
+
+        .has-children {
+            position: relative;
+            background-color: $color_mine_shaft_approx;
+
+            > a {
+                height: 100%;
+                padding: 0 calc(1.8em +22px) 0 calc(1.8em +26px);
+                line-height: 55px;
+            }
+
+            > a::after {
+                display: block;
+                right: 1.8em;
+            }
+
+            ul {
+                background-color: $color_mirage_approx;
+                width: 200px;
+                top: 100%;
+                right: 0;
+                left: auto;
+                //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+                box-shadow: 0 1px 10px $black_20;
+
+                a {
+                    padding-left: 18px !important;
+                }
+            }
+        }
+    }
+
+    .cd-side-nav {
+        position: relative;
+        float: left;
+        top: auto;
+        width: 110px;
+        min-height: 100vh;
+        padding-top: 55px;
+        visibility: visible;
+        opacity: 1;
+        overflow: visible;
+        max-height: none;
+
+        &.nav-is-visible {
+            //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+            box-shadow: none;
+        }
+
+        &.is-fixed {
+            position: fixed;
+        }
+
+        > ul {
+            padding: 0;
+
+            > li {
+                > a {
+                    padding: calc(2.2em +24px) 0 2.4em;
+                }
+
+                > a::before {
+                    left: 50%;
+                    right: auto;
+                    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+                    transform: translateX(-50%);
+                    top: 2.4em;
+                }
+            }
+        }
+
+        .cd-label {
+            display: none;
+        }
+
+        a {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .count {
+            height: 8px;
+            width: 8px;
+            //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+            border-radius: 50%;
+            //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+            box-shadow: 0 0 6px $black_20;
+            padding: 0;
+            top: 2em;
+            //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: translateX(-50%);
+            left: calc(50% +5px);
+            right: auto;
+            color: transparent;
+        }
+
+        .active > a {
+            //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+            box-shadow: inset 3px 0 0 $color_lochmara_approx;
+            background-color: $color_tuna_approx;
+        }
+
+        .action-btn a {
+            margin: 1em 10% 0;
+        }
+
+        .has-children.selected > a {
+            background-color: $color_tuna_approx;
+        }
+    }
+
+    .has-children {
+        position: relative;
+
+        ul {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 160px;
+            padding: 0;
+            //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+            box-shadow: 0 2px 10px $black_30;
+
+            a {
+                text-align: left;
+                border: none;
+                padding: 1em;
+            }
+        }
+
+        > a::after {
+            display: none;
+        }
+    }
+
+    .cd-main-content .content-wrapper {
+        margin-left: 110px;
+        padding-top: 55px;
+
+        h1 {
+            padding: 4em 0 0;
+            font-size: 3.2rem;
+            font-weight: 300;
+        }
+    }
+
+    .no-touch .has-children ul a:hover {
+        color: $color_lochmara_approx;
+    }
+}
+
+.cd-main-header {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 45px;
+    width: 100%;
+    background: $color_bright_gray_approx;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 3px $black_20;
+}
+
+.cd-main-header::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.cd-logo {
+    float: left;
+    display: block;
+    margin: 11px 0 0 5%;
+
+    img {
+        display: block;
+    }
+}
+
+.cd-nav-trigger {
+    float: right;
+    position: relative;
+    display: block;
+    width: 34px;
+    height: 44px;
+    margin-right: 5%;
+    overflow: hidden;
+    white-space: nowrap;
+    color: transparent;
+
+    span {
+        position: absolute;
+        display: inline-block;
+        height: 3px;
+        width: 24px;
+        background: $white;
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        margin-top: -2px;
+        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: background 0.2s;
+    }
+
+    span::before {
+        position: absolute;
+        display: inline-block;
+        height: 3px;
+        width: 24px;
+        background: $white;
+        content: '';
+        right: 0;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translateZ(0);
+        //Instead of the line below you could use @include backface-visibility($visibility)
+        backface-visibility: hidden;
+        //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+        transform-origin: 0 50%;
+        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: transform 0.2s;
+        top: -6px;
+    }
+
+    span::after {
+        position: absolute;
+        display: inline-block;
+        height: 3px;
+        width: 24px;
+        background: $white;
+        content: '';
+        right: 0;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translateZ(0);
+        //Instead of the line below you could use @include backface-visibility($visibility)
+        backface-visibility: hidden;
+        //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+        transform-origin: 0 50%;
+        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: transform 0.2s;
+        top: 6px;
+    }
+
+    &.nav-is-visible {
+        span {
+            background: rgba(255, 255, 255, 0);
+        }
+
+        span::before {
+            background: $white;
+            //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: translateX(4px) translateY(-3px) rotate(45deg);
+        }
+
+        span::after {
+            background: $white;
+            //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: translateX(4px) translateY(2px) rotate(-45deg);
+        }
+    }
+}
+
+.cd-search {
+    position: relative;
+    margin: 1.2em 5% 0.6em;
+
+    &.is-hidden {
+        opacity: 0;
+    }
+
+    input {
+        padding-left: 32px;
+        width: 100%;
+        height: 36px;
+        border: none;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 0.25em;
+        appearance: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.cd-search::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    bottom: auto;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translateY(-50%);
+    height: 16px;
+    width: 16px;
+    background: $url_0 no-repeat 0 0;
+}
+
+.cd-nav {
+    display: none;
+}
+
+.cd-top-nav {
+    > li {
+        > a::before {
+            display: none;
+        }
+
+        a {
+            padding: 1em 5% !important;
+        }
+    }
+
+    img {
+        position: absolute;
+        left: 1.8em;
+        top: 50%;
+        bottom: auto;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translateY(-50%);
+        height: 20px;
+        width: 20px;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 50%;
+        display: none;
+    }
+}
+
+.cd-side-nav {
+    position: fixed;
+    left: 0;
+    top: 67px;
+    z-index: 10;
+    width: 200px;
+    padding: 45px 0 0;
+    background-color: $color_mine_shaft_approx;
+    max-height: 100vh;
+    overflow: hidden;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.2s 0s, visibility 0s 0.2s;
+
+    &.nav-is-visible {
+        opacity: 1;
+        visibility: visible;
+        overflow: visible;
+        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: opacity 0.2s 0s, visibility 0s 0s;
+        max-height: none;
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: 0 2px 10px $black_20;
+    }
+
+    > ul {
+        padding: 0.6em 0;
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+
+        > li {
+            > a {
+                padding-left: calc(5% +24px);
+                border-bottom: 1px solid $color_ship_gray_approx;
+            }
+
+            > a::before {
+                position: absolute;
+                content: '';
+                left: 5%;
+                top: 50%;
+                bottom: auto;
+                //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+                transform: translateY(-50%);
+                height: 16px;
+                width: 16px;
+                background: $url_1 no-repeat 0 0;
+            }
+
+            &.overview > a::before {
+                background-position: -64px 0;
+            }
+
+            &.notifications > a::before {
+                background-position: -80px 0;
+            }
+
+            &.comments > a::before {
+                background-position: -48px 0;
+            }
+
+            &.bookmarks > a::before {
+                background-position: -32px 0;
+            }
+
+            &.images > a::before {
+                background-position: 0 0;
+            }
+
+            &.users > a::before {
+                background-position: -16px 0;
+            }
+        }
+    }
+
+    .cd-label {
+        display: block;
+        padding: 1em 5%;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $color_nevada_approx;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+    }
+
+    a {
+        display: block;
+        padding: 1em 5%;
+        position: relative;
+        color: $white;
+        font-size: 1.4rem;
+    }
+
+    .count {
+        position: absolute;
+        top: 50%;
+        bottom: auto;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translateY(-50%);
+        right: calc(5% +16px +0.4em);
+        padding: 0.2em 0.4em;
+        background-color: $color_salmon_approx;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 0.25em;
+        color: $white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .action-btn {
+        a {
+            display: block;
+            margin: 0 5%;
+            padding: 1em 0;
+            background-color: $color_lochmara_approx;
+            //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+            border-radius: 0.25em;
+            border: none;
+            //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+            box-shadow: 0 1px 3px $black_30, inset 0 1px 0 $white_20;
+            text-align: center;
+            color: $white;
+            font-weight: bold;
+        }
+
+        a::before {
+            display: none;
+        }
+    }
+
+    ul.cd-top-nav > li:last-of-type > a {
+        border-bottom: none;
+    }
+}
+
+.has-children {
+    ul {
+        position: relative;
+        width: 100%;
+        display: none;
+        background-color: $color_mirage_approx;
+    }
+
+    > a::after {
+        position: absolute;
+        content: '';
+        height: 16px;
+        width: 16px;
+        right: 5%;
+        top: 50%;
+        bottom: auto;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translateY(-50%);
+        background: $url_2;
+    }
+
+    &.selected {
+        > ul {
+            display: block;
+        }
+
+        > a::after {
+            //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+}
+
+.cd-main-content .content-wrapper {
+    padding: 45px 5% 3em;
+
+    h1 {
+        text-align: center;
+        padding: 3em 0 0;
+        font-size: 2rem;
+    }
+}

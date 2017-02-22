@@ -7,25 +7,43 @@ body {
 }
 
 header {
-    padding: 1em 5em;
-    background: #aaa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    padding: 1em;
+    background: #2c3136;
     margin-bottom: 20px;
+    z-index: 10;
 }
 
 footer {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     padding: 40px 0;
     color: #999;
     text-align: center;
     background-color: #f9f9f9;
     border-top: 1px solid #e5e5e5;
+    z-index: 10;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
 }
 
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
-.container-fluid {
-  min-height: 77vh;
+.container {
+    padding: 8em 4em 15em;
+    min-height: 77vh;
 }
 
 .lang-heb {
@@ -98,6 +116,4 @@ a:hover {
     position: relative;
 }
 
-.side__nav {
-  
-}
+.side__nav {}

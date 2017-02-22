@@ -8,6 +8,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="content/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="content/style/sidenav.scss" media="screen">
     <link rel="stylesheet" href="content/style/loader.scss" media="screen">
     <link rel="stylesheet" href="content/style/ticket.scss" media="screen">
     <link rel="stylesheet" href="content/style/tickets_wrapper.scss" media="screen">
@@ -25,20 +26,17 @@
     <!-- Angular Material Library -->
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
     <header>
-        <h4>Konimbo Support Tickets Dashboard</h4>
+        <h4>Konimbo | Dev Tickets Dashboard</h4>
     </header>
-    <div class="container-fluid" ng-controller="TicketsController">
+    <side-nav class="cd-side-nav"></side-nav>
+    <div class="container" ng-controller="TicketsController">
         <div class="row">
-            <div class="side__nav col-xs-1">
-                
-            </div>
-            <div class="panel col-xs-11">
-                <div id="tickets" class="tickets__untracked">
-                    <tickets-wrapper class="section col-xs-12 col-sm-6" data-ticketstitle="Untracked-Tickets"></tickets-wrapper>
-                </div>
-                <div id="tracked" class="tickets__tracked">
+            <div class="content_panel">
+                <tickets-wrapper class="tickets__wrapper section" data-ticketstitle="Untracked-Tickets"></tickets-wrapper>
+
+                <!-- <div class="tickets__tracked">
                     <tickets-wrapper class="section col-xs-12 col-sm-6" data-ticketstitle="Tracked-Tickets"></tickets-wrapper>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

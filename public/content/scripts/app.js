@@ -116,3 +116,13 @@ app.directive('footer', function() {
         templateUrl: 'templates/footer.html'
     }
 });
+
+/**
+ * footer directive
+ */
+app.directive('sideNav', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/sidenav.html'
+    }
+});
