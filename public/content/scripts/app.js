@@ -23,19 +23,10 @@ app.controller('TicketsController', function($scope, $http) {
     $scope.titleLimit = 10;
     $scope.letterLimit = 30;
 
-    // fetch upcoming
+    // fetch tickets
     if (ENV === 'production') {
-        $http.get("/tickets/328121").then(function(response) {
-            $scope.ticketsList = response.data.data;
-        });
+        _fetchData('328121')
         // $scope.ticketsList = dataService.getTickets(328122)
-    } else {
-        $scope.ticketsList = _fetchFakeData()
-    }
-
-    // fetch tasks
-    if (ENV === 'production') {
-        // $scope.ticketsList = fetchDataService.tickets()
     } else {
         $scope.ticketsList = _fetchFakeData()
     }
@@ -44,6 +35,16 @@ app.controller('TicketsController', function($scope, $http) {
         $http.get("test/fake_data.json").then(function(response) {
             return response.data;
         });
+    }
+
+    function _fetchData(id) {
+        $http.get("/tickets/" + id).then(function(response) {
+            $scope.ticketsList = response.data.data;
+        });
+    }
+
+    $scope.fetchData = function(id) {
+        _fetchData(id);
     }
 });
 
@@ -61,7 +62,6 @@ app.directive('loading', function($http) {
             $scope.isLoading = function() {
                 if ($http.pendingRequests.length > 0) {
                     $element.addClass($http.pendingRequests[0].url);
-                    console.log($http.pendingRequests[0].url);
                 }
                 return $http.pendingRequests.length > 0;
             };
@@ -102,7 +102,7 @@ app.directive('ticketsWrapper', function() {
         },
         templateUrl: 'templates/tickets_wrapper.html',
         link: function(scope, element, attribute) {
-            console.log(scope.ticketstitle);
+
         }
     }
 });
