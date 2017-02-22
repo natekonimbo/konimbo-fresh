@@ -25,7 +25,7 @@ app.controller('TicketsController', function($scope, $http) {
 
     // fetch upcoming
     if (ENV === 'production') {
-        $http.get("/tickets/328122").then(function(response) {
+        $http.get("/tickets/328121").then(function(response) {
             $scope.ticketsList = response.data.data;
         });
         // $scope.ticketsList = dataService.getTickets(328122)
