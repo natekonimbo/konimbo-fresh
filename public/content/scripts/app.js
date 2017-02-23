@@ -28,16 +28,17 @@ app.controller('TicketsController', function($scope, $http) {
         _fetchData('328121')
         // $scope.ticketsList = dataService.getTickets(328122)
     } else {
-        $scope.ticketsList = _fetchFakeData()
+        _fetchFakeData()
     }
 
     function _fetchFakeData() {
         $http.get("test/fake_data.json").then(function(response) {
-            return response.data;
+            $scope.ticketsList = response.data;
         });
     }
 
     function _fetchData(id) {
+        $scope.ticketsList = null;
         $http.get("/tickets/" + id).then(function(response) {
             $scope.ticketsList = response.data.data;
         });
