@@ -1,17 +1,19 @@
-<loading ng-show="loadingOverlay"></loading>
-<div class="well header">
-    <div class="title">
-        <h3>{{ ticketstitle }}
-            <span class="badge">{{ ticketsList.length }}</span>
-        </h3>
-        <span>Upcoming Tickets</span>
-    </div>
-    <div class="toolbar">
-        <button class="btn" type="button" name="button" ng-click="fetchData('328121')">
-            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
-        </button>
-    </div>
-</div>
-<div class="ticket--wrapper panel card card-1 col-xs-12" ng-repeat="ticket in ticketsList">
-    <ticket data-ticket="ticket"></ticket>
+<div>
+  <loading ng-show="loadingOverlay"></loading>
+  <div class="well header">
+      <div class="title">
+          <h3>{{ ticketstitle }}
+              <span class="badge">{{ ticketsList.length }}</span>
+          </h3>
+          <span>Upcoming Tickets</span>
+      </div>
+      <div class="toolbar">
+          <button class="btn" type="button" name="button" ng-click="fetchData('328121')">
+              <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+          </button>
+      </div>
+  </div>
+  <div class="ticket--wrapper panel card card-1 col-xs-12" ng-repeat="ticket in ticketsList">
+      <ticket data-ticket="ticket"></ticket>
+  </div>
 </div>

@@ -95,7 +95,7 @@ app.directive('ticket', function() {
  */
 app.directive('ticketsWrapper', function() {
     return {
-        restrict: 'E',
+        restrict: 'A',
         controller: 'TicketsController',
         scope: {
             ticketstitle: '@',
@@ -113,17 +113,30 @@ app.directive('ticketsWrapper', function() {
  */
 app.directive('footer', function() {
     return {
-        restrict: 'E',
+        restrict: 'A',
+        replace: true,
         templateUrl: 'templates/footer.html'
     }
 });
 
 /**
- * footer directive
+ * header directive
  */
-app.directive('sideNav', function() {
+app.directive('header', function() {
     return {
-        restrict: 'E',
+        restrict: 'A',
+        replace: true,
+        templateUrl: 'templates/header.html'
+    }
+});
+
+/**
+ * sidenav directive
+ */
+app.directive('sidenav', function() {
+    return {
+        restrict: 'A',
+        replace: true,
         templateUrl: 'templates/sidenav.html',
         link: function(scope, element, attribute) {
           
