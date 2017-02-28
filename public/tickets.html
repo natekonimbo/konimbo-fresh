@@ -17,7 +17,7 @@
     <title>Konimbo | Support Dashboard</title>
 </head>
 
-<body>
+<body ng-controller="TicketsController">
     <!-- Scripts  -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
@@ -29,14 +29,10 @@
         <h4>Konimbo | Dev Tickets Dashboard</h4>
     </header>
     <side-nav class="cd-side-nav"></side-nav>
-    <div class="container" ng-controller="TicketsController">
+    <div class="container">
         <div class="row">
             <div class="content_panel">
                 <tickets-wrapper class="tickets__wrapper section" data-ticketstitle="Untracked-Tickets"></tickets-wrapper>
-
-                <!-- <div class="tickets__tracked">
-                    <tickets-wrapper class="section col-xs-12 col-sm-6" data-ticketstitle="Tracked-Tickets"></tickets-wrapper>
-                </div> -->
             </div>
         </div>
     </div>

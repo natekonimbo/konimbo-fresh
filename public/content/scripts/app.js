@@ -124,6 +124,9 @@ app.directive('footer', function() {
 app.directive('sideNav', function() {
     return {
         restrict: 'E',
-        templateUrl: 'templates/sidenav.html'
+        templateUrl: 'templates/sidenav.html',
+        link: function(scope, element, attribute) {
+          
+        }
     }
 });
