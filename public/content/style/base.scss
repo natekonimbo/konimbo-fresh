@@ -10,10 +10,6 @@ body {
     overflow: hidden;
 }
 
-.sidenav {
-    position: fixed;
-}
-
 footer {
     position: fixed;
     top: auto;
@@ -38,7 +34,7 @@ a:hover {
 }
 
 .container {
-    padding: 3em 4em 15em;
+    padding: 6.5em 4em 15em 20em;
     min-height: 77vh;
 }
 
